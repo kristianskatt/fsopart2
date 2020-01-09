@@ -1,0 +1,3 @@
+DELETE http://localhost:3001/api/persons/4
+
+// Uses the REST Client extension. Click Send Request to send the request!

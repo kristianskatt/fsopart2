@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "James Bond",
+    "number": "007"
+}
+
+// Uses the REST Client extension. Click Send Request to send the request!
