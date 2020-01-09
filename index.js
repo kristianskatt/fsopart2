@@ -17,12 +17,6 @@ const requestLogger = (request, response, next) => {
 
 app.use(requestLogger) // All of these are middleware
 
-const unknownEndpoint = (request, response) => {
-    response.status(404).send({ error: 'unknown endpoint' })
-}
-
-app.use(unknownEndpoint)
-
 let persons = [
     { 
       name: "Arto Hellas", 
@@ -121,8 +115,13 @@ app.put('/api/persons', (req, res) => {
     res.json(createPerson(name, number))
 })
 
+const unknownEndpoint = (request, response) => {
+    response.status(404).send({ error: 'unknown endpoint' })
+}
+
+app.use(unknownEndpoint)
+
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
-
